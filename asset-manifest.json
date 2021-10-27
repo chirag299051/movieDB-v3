@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/movieDB-v3/static/css/main.fa68a4e0.chunk.css",
-    "main.js": "/movieDB-v3/static/js/main.3c86b3b6.chunk.js",
-    "main.js.map": "/movieDB-v3/static/js/main.3c86b3b6.chunk.js.map",
+    "main.js": "/movieDB-v3/static/js/main.9c7dd7ef.chunk.js",
+    "main.js.map": "/movieDB-v3/static/js/main.9c7dd7ef.chunk.js.map",
     "runtime-main.js": "/movieDB-v3/static/js/runtime-main.4fc6e121.js",
     "runtime-main.js.map": "/movieDB-v3/static/js/runtime-main.4fc6e121.js.map",
     "static/css/2.c1256375.chunk.css": "/movieDB-v3/static/css/2.c1256375.chunk.css",
-    "static/js/2.30b5243c.chunk.js": "/movieDB-v3/static/js/2.30b5243c.chunk.js",
-    "static/js/2.30b5243c.chunk.js.map": "/movieDB-v3/static/js/2.30b5243c.chunk.js.map",
+    "static/js/2.9657ade0.chunk.js": "/movieDB-v3/static/js/2.9657ade0.chunk.js",
+    "static/js/2.9657ade0.chunk.js.map": "/movieDB-v3/static/js/2.9657ade0.chunk.js.map",
     "static/js/3.524516af.chunk.js": "/movieDB-v3/static/js/3.524516af.chunk.js",
     "static/js/3.524516af.chunk.js.map": "/movieDB-v3/static/js/3.524516af.chunk.js.map",
     "index.html": "/movieDB-v3/index.html",
     "static/css/2.c1256375.chunk.css.map": "/movieDB-v3/static/css/2.c1256375.chunk.css.map",
     "static/css/main.fa68a4e0.chunk.css.map": "/movieDB-v3/static/css/main.fa68a4e0.chunk.css.map",
-    "static/js/2.30b5243c.chunk.js.LICENSE.txt": "/movieDB-v3/static/js/2.30b5243c.chunk.js.LICENSE.txt",
+    "static/js/2.9657ade0.chunk.js.LICENSE.txt": "/movieDB-v3/static/js/2.9657ade0.chunk.js.LICENSE.txt",
     "static/media/logo.6ce24c58.svg": "/movieDB-v3/static/media/logo.6ce24c58.svg",
     "static/media/index.css": "/movieDB-v3/static/media/menu.cd4589e9.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.4fc6e121.js",
     "static/css/2.c1256375.chunk.css",
-    "static/js/2.30b5243c.chunk.js",
+    "static/js/2.9657ade0.chunk.js",
     "static/css/main.fa68a4e0.chunk.css",
-    "static/js/main.3c86b3b6.chunk.js"
+    "static/js/main.9c7dd7ef.chunk.js"
   ]
 }
