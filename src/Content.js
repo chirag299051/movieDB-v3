@@ -77,7 +77,7 @@ const Content = () => {
     setYtKeys(keys);
     console.log(backdropURL);
     console.log("ref: ", ref);
-  }, [content]);
+  }, [content,type,id]);
 
   useEffect(() => {
     // setOmdb(omdbData);
