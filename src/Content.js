@@ -14,7 +14,7 @@ const KEY = "092e8cb2fdfe2fa5f210c9f2a932d024";
 const contentURL = "https://api.themoviedb.org/3/";
 const omdbURL = `https://www.omdbapi.com/?apikey=b9e96893&t=`;
 
-const GRADIENT = `linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,1) 100%)`;
+const GRADIENT = `linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,.35) 50%, rgba(0,0,0,1) 100%)`;
 // const GRADIENT_hover = `linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,1) 100%)`;
 
 const Content = () => {
