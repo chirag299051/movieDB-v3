@@ -66,7 +66,6 @@ const Content = () => {
   },[content.name,content.title,type,id])
 
   useEffect(() => {
-    // setContent(data);
     const keys =
       content.videos &&
       content.videos.results
@@ -118,6 +117,7 @@ const Content = () => {
         <ReactPlayer
           width="100%"
           height="100vh"
+          key={ytKeys}
           url={ytKeys}
           className="react-player"
           controls

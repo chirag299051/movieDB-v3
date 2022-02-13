@@ -91,6 +91,11 @@ code {
   border-bottom: 1px solid deepskyblue !important;
 }
 
+.react-select__input-container.css-14dclt2-Input,
+.react-select__input {
+  color: aliceblue;
+}
+
 .react-select__menu-list {
   background-color: rgb(24, 24, 24);
   color: white;
