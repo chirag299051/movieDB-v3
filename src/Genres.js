@@ -36,7 +36,7 @@ const Genres = () => {
       }
     }
     fetchGenres();    
-  },[]);
+  },[type]);
 
   useEffect(() => {
 console.log('Movie Data: ',mData);
@@ -46,7 +46,7 @@ console.log('TV Data: ',tvData);
 
   return <section className="genres">
     {type === 'movie' ? mData.map(x => <List key={x.id} list={x.results} head={x.genre} type={type}/>) : tvData
-      .filter(x => x.genre !== 'Action' && x.genre !== 'Fantasy' && x.genre !== 'Horror' && x.genre !== "Science Fiction" && x.genre !== "TV Movie" && x.genre !== 'war')
+      .filter(x => x.genre !== 'Action' && x.genre !== 'Fantasy' && x.genre !== 'Horror' && x.genre !== "Science Fiction" && x.genre !== 'war' && x.genre !== 'Thriller')
       .map(x => <List key={x.id} list={x.results} head={x.genre} type={type}/>)}
     </section>;
 };

@@ -38,6 +38,7 @@ const ListItem = ({ item, fav, del }) => {
   }, []);
 
   return (
+    poster_path &&
     <Link to={`/${typ}/${id}`} className="list-item">
       <img
         src={"https://image.tmdb.org/t/p/w200" + poster_path}
