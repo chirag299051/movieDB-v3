@@ -17,8 +17,8 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home}></Route>
           <Route path="/favorite" component={Favorite}></Route>
-          <Route path="/genres/movie" component={Genres}></Route>
-          <Route path="/genres/tv" component={Genres}></Route>
+          <Route path="/genres/:type" component={Genres}></Route>
+          <Route path="/genres/:type" component={Genres}></Route>
           <Route path="/:type/:id" component={Content}></Route>
         </Switch>
         <Footer />

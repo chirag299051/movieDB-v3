@@ -115,7 +115,8 @@ code {
   /* margin-right: 0px; */
 }
 
-.home {
+.home,
+.genres {
   min-height: 100vh;
   padding-top: 100px;
 }
@@ -301,7 +302,7 @@ h1.content-title {
 .head {
   padding: 0px 50px;
   /* color: #212529; */
-  color: #32383f;
+  color: #424c58;
 }
 .list {
   /* background-color: black; */
