@@ -143,6 +143,7 @@ h1.content-title {
   color: #74818f;
 }
 .backdrop {
+  position: relative;
   height: 600px;
   background-size: cover;
   width: 56%;
@@ -155,6 +156,20 @@ h1.content-title {
   left: 20%; */
   transition: all 0.3s ease-in-out;
 }
+
+.stream-wrapper {
+  position: absolute;
+  left: 2%;
+  top: 3%;
+}
+
+.stream-logo {
+  width: 60px;
+  border: 0.2px solid rgb(66, 93, 117);
+  border-radius: 15%;
+  margin: 5px;
+}
+
 .backdrop .awards {
   color: rgb(165, 126, 27);
   margin: 5px;
@@ -461,6 +476,14 @@ h1.content-title {
   .backdrop {
     width: 100%;
     border-radius: 5px;
+  }
+  .stream-wrapper {
+    left: 0;
+    right: 0;
+    top: 400px;
+  }
+  .stream-logo {
+    margin: 5px;
   }
   .backdrop .vote {
     position: unset;

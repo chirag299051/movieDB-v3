@@ -13,6 +13,7 @@ import Accordion from "react-bootstrap/Accordion";
 const KEY = "092e8cb2fdfe2fa5f210c9f2a932d024";
 const contentURL = "https://api.themoviedb.org/3/";
 const omdbURL = `https://www.omdbapi.com/?apikey=b9e96893&t=`;
+const STREAM_URL = `https://api.themoviedb.org/3/`
 
 const GRADIENT = `linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,.35) 50%, rgba(0,0,0,1) 100%)`;
 // const GRADIENT_hover = `linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,1) 100%)`;
@@ -21,6 +22,7 @@ const Content = () => {
   const ref = useRef(null);
   const [content, setContent] = useState({});
   const [reviews, setReviews] = useState([]);
+  const [stream, setStream] = useState([]);
   const [omdb, setOmdb] = useState({});
   const [ytKeys, setYtKeys] = useState();
   // const [favorite, setFavorite] = useState(false);
@@ -57,6 +59,9 @@ const Content = () => {
         const res3 = await fetch(`${contentURL}/${type}/${id}/reviews?api_key=${KEY}&language=en-US&page=1`);
         const result3 = await res3.json();
         content && setReviews(result3.results);
+        const res4 = await fetch(`${STREAM_URL}${type}/${id}/watch/providers?api_key=${KEY}`);
+        const result4 = await res4.json();
+        setStream(result4.results.IN.flatrate);
       } catch(e) {
         console.log('Err',e)
       }
@@ -110,6 +115,7 @@ const Content = () => {
   console.log("OMDB: ", omdb);
   console.log("Similar: ", similar);
   console.log("Reviews: ", reviews);
+  console.log('Stream', stream)
 
   return (
     <section className="">
@@ -137,6 +143,9 @@ const Content = () => {
             className="backdrop"
             style={{ backgroundImage: `${GRADIENT},${backdropURL}` }}
           >
+            <div className="stream-wrapper">
+              {stream && stream.map(x => <img class='stream-logo' key={x.display_priority} src={`https://image.tmdb.org/t/p/original/${x.logo_path}`} alt="" />)}
+            </div>
             <p className="awards">{omdb && omdb.Awards}</p>
             <h4>{content.release_date && content.release_date.substr(0, 4)}</h4>
             <h4>
