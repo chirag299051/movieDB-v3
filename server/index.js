@@ -24,20 +24,11 @@ app.listen(API_PORT, () => {
   console.log(`Server is listening on port ${API_PORT}`);
 });
 
-const buildPath = path.resolve(
-  path.join(__dirname, "..."),
-  "app",
-  "build",
-  "index.html"
-);
-console.log("build Path: " + buildPath);
-console.log("base name " + path.basename(path.dirname(__filename)));
-if (process.env.NODE_ENV === "production") {
-  //*Set static folder up in production
-  app.use(express.static("app/build"));
-  app.get("*", (req, res) => res.sendFile(buildPath));
-}
-//no such file or directory, stat '/opt/render/project/src/server/.../app/build/index.html'
+const buildPath = path.join(__dirname, ".../app/build");
+
+app.use(express.static(buildPath));
+
+app.get("*", (req, res) => res.sendFile(buildPath, "index.html"));
 
 app.use(
   cors({

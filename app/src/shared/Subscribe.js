@@ -4,10 +4,10 @@ import SubscribeCard from "./SubscribeCard";
 const data = [
   {
     id: 1,
-    plan: "Premium",
-    price: 799,
-    res: "4K - Ultra HD",
-    quality: "Best",
+    plan: "Basic",
+    price: 299,
+    res: "720p - HD",
+    quality: "Good",
   },
   {
     id: 2,
@@ -18,10 +18,10 @@ const data = [
   },
   {
     id: 3,
-    plan: "Basic",
-    price: 299,
-    res: "720p - HD",
-    quality: "Good",
+    plan: "Premium",
+    price: 799,
+    res: "4K - Ultra HD",
+    quality: "Best",
   },
 ];
 
