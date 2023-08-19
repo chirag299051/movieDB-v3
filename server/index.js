@@ -23,6 +23,15 @@ app.listen(API_PORT, () => {
   console.log(`Server is listening on port ${API_PORT}`);
 });
 
+if (process.env.NODE_ENV === "production") {
+  //*Set static folder up in production
+  app.use(express.static("app/build"));
+
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "app", "build", "index.html"))
+  );
+}
+
 app.use(
   cors({
     origin: ["https://moviedb-v3.onrender.com", "http://localhost:3000"],
