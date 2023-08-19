@@ -7,6 +7,7 @@ const authRoute = require("./Routes/AuthRoutes");
 const userRoute = require("./Routes/UserRoutes");
 require("dotenv").config();
 const bodyParser = require("body-parser");
+const path = require("path");
 
 const MONGODB_URL = process.env.MONGODB_URL;
 const API_PORT = process.env.API_PORT || 4000;
