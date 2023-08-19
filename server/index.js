@@ -24,7 +24,7 @@ app.listen(API_PORT, () => {
   console.log(`Server is listening on port ${API_PORT}`);
 });
 
-const buildPath = path.join(__dirname, "../app/build");
+const buildPath = path.join(__dirname, "../app/build/movieDB-v3");
 
 app.use(express.static(buildPath));
 
