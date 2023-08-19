@@ -15,9 +15,6 @@ const appReducer = (state = initState, action) => {
   if (action.type === "FETCH") {
     return { ...state, ...action.data };
   }
-  if (action.type === "") {
-    return state;
-  }
   return state;
 };
 

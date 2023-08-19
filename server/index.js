@@ -25,7 +25,7 @@ app.listen(API_PORT, () => {
 
 app.use(
   cors({
-    origin: ["https://moviedb-v3.onrender.com"],
+    origin: ["https://moviedb-v3.onrender.com", "http://localhost:3000"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })

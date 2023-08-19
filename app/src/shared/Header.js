@@ -5,7 +5,6 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useCookies } from "react-cookie";
-import { toast } from "react-toastify";
 import axios from "axios";
 import { setModal, setUser } from "../store/actions/userActions";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
