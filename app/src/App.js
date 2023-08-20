@@ -6,11 +6,19 @@ import { HashRouter, Route, Switch } from "react-router-dom";
 import Content from "./ContentPage/Content";
 import Genres from "./GenrePage/Genres";
 import Profile from "./ProfilePage/Profile";
+import { useDispatch, useSelector } from "react-redux";
+import { setTheme } from "./store/actions/appActions";
+import { useEffect } from "react";
 // import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer } from "react-toastify";
-import Subscribe from "./shared/Subscribe";
 
 function App() {
+  const dispatch = useDispatch();
+  const theme = useSelector((state) => state.app.theme);
+
+  useEffect(() => {
+    dispatch(setTheme("dark"));
+  }, [theme]);
+
   return (
     <HashRouter basename="/">
       <Header />
@@ -19,10 +27,8 @@ function App() {
         <Route path="/profile/:id" component={Profile}></Route>
         <Route path="/genres/:type" component={Genres}></Route>
         <Route path="/:type/:id" component={Content}></Route>
-        <Route path="/subscribe" component={Subscribe}></Route>
       </Switch>
       <Footer />
-      {/* <ToastContainer /> */}
     </HashRouter>
   );
 }

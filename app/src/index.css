@@ -22,7 +22,7 @@ code {
 ::-webkit-scrollbar-thumb:horizontal {
   background: #a6c2dd;
   border-radius: 10px;
-  border: 1px solid deepskyblue;
+  border: 1px solid var(--primary);
 }
 ::-webkit-scrollbar-thumb:hover {
   background-color: #00404d;
@@ -33,7 +33,29 @@ code {
 }
 
 #root {
-  background-color: rgb(15, 15, 15);
+  background-color: var(--bg);
+}
+
+html.color-theme-in-transition,
+html.color-theme-in-transition *,
+html.color-theme-in-transition *:before,
+html.color-theme-in-transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
+}
+
+html[data-theme="dark"] {
+  --header: black;
+  --bg: rgb(15, 15, 15);
+  --text: aliceblue;
+  --primary: deepskyblue;
+}
+
+html[data-theme="light"] {
+  --header: rgba(255, 255, 255, 0.779);
+  --bg: aliceblue;
+  --text: black;
+  --primary: red;
 }
 
 .modal-header {
@@ -112,12 +134,19 @@ span button {
 }
 
 .navbar {
-  background-color: black;
+  background-color: var(--header);
   position: fixed !important;
   top: 0;
   width: 100%;
   z-index: 1000;
 }
+
+.me-5.navbar-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .container {
   max-width: 100vh !important;
   /* margin: 0 !important; */
@@ -127,22 +156,27 @@ span button {
 }
 
 .navbar-brand span {
-  color: deepskyblue;
-  font-weight: 450;
+  color: var(--primary);
+  font-weight: 600;
 }
 
 .navbar-dark .navbar-nav .nav-link.blue {
-  color: deepskyblue;
+  color: var(--primary);
 }
 #nav-dropdown {
-  color: deepskyblue;
+  color: var(--primary);
 }
 
 .navbar-dark .navbar-nav .nav-link {
-  color: rgb(182, 188, 194);
+  color: var(--text);
 }
 .navbar-dark .navbar-nav .nav-link:hover {
-  color: aliceblue !important;
+  /* color: aliceblue !important; */
+}
+
+#basic-navbar-nav {
+  width: 80%;
+  justify-content: space-between;
 }
 
 .navbar-collapse {
@@ -159,25 +193,44 @@ span button {
   border: 1px solid black !important;
 }
 
+.navLinks {
+  margin-left: 80px;
+  display: flex;
+}
+
+.navLink {
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+}
+.navLink.select {
+  background-color: var(--primary);
+  color: black !important;
+  opacity: 0.9;
+}
+
+.nav-item.blue {
+  font-weight: 600;
+}
+
 .react-select-container {
   width: 25%;
-  margin-left: 500px;
-  margin-right: 290px;
+  margin-left: 150px;
+  margin-right: 100px;
 }
 .react-select__control {
   background-color: transparent !important;
   border: none !important;
-  border-bottom: 1px solid deepskyblue !important;
+  border-bottom: 1px solid var(--primary) !important;
   border-radius: 0% !important;
 }
 .react-select__control--is-focused {
   box-shadow: none !important;
-  border-bottom: 1px solid deepskyblue !important;
+  border-bottom: 1px solid var(--primary) !important;
 }
 
 .react-select__input-container,
 .react-select__input {
-  color: aliceblue !important;
+  color: var(--text) !important;
 }
 
 .react-select__menu-list {
@@ -204,37 +257,30 @@ span button {
   /* margin-right: 0px; */
 }
 
-.subscribe {
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-}
-
 .subscribe-heading {
   margin: auto;
-  width: 300px;
+  width: 225px;
   display: block;
-  padding-top: 50px;
   color: goldenrod;
 }
 
 .subscribe .card-container {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .subscribe .subscribe-card {
   width: 300px;
-  height: 450px;
-  margin: 50px;
+  height: 400px;
+  margin: 20px 50px;
   background-color: rgb(25, 25, 25);
   position: relative;
 }
 
 .subscribe-card .plan {
   background-color: #000;
-  color: deepskyblue;
+  color: var(--primary);
   height: 30%;
   display: flex;
   justify-content: center;
@@ -269,13 +315,12 @@ span button {
 }
 
 .subscribe-card .pay-btn:hover {
-  background-color: deepskyblue;
+  background-color: var(--primary);
 }
 
 .home,
 .genres,
-.profile,
-.subscribe {
+.profile {
   min-height: 100vh;
   width: 100vw;
   padding-top: 100px;
@@ -289,7 +334,6 @@ span button {
   text-align: center;
   top: 100%;
   width: 100%;
-  background-color: rgb(15, 15, 15);
 }
 h1.content-title {
   margin-top: 80px;
@@ -462,7 +506,7 @@ h1.content-title {
 }
 
 .arrow-wrapper {
-  color: deepskyblue;
+  color: var(--primary);
   background-color: rgb(15, 15, 15);
   border-radius: 50%;
   width: 80px;
@@ -504,13 +548,10 @@ h1.content-title {
   border-radius: 5px;
   perspective: 1px;
   overflow: hidden;
-  /* box-shadow: rgba(255, 255, 255, 0.16) 0px 1px 4px,
-    rgba(255, 255, 255, 0.23) 0px 1px 4px; */
   transition: all 0.3s ease-in-out;
   text-decoration: none;
 }
 .list-item .item-detail {
-  /* background-color: rgb(26, 26, 26); */
   background-color: rgb(0, 0, 0);
   font-size: 1rem;
   color: white;
@@ -519,8 +560,6 @@ h1.content-title {
   padding-top: 10px;
   transition: all 0.3s ease-in-out;
   opacity: 0;
-  /* border-top: 10px solid black; */
-  /* z-index: 0; */
 }
 .item-detail h6 {
   font-size: 0.8rem;
@@ -593,7 +632,7 @@ h1.content-title {
   color: rgb(78, 84, 90);
   font-size: 14px;
   font-weight: 500;
-  background-color: #000;
+  background-color: var(--header);
 }
 
 .footer a {
