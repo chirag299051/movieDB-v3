@@ -20,9 +20,9 @@ export const setModal = (modal) => (dispatch) => {
   dispatch({ type: "SET_MODAL", modal });
 };
 
-export const getFromLocalStorage = () => (dispatch) => {
+export const getFromLocalStorage = () => async (dispatch) => {
   const user =
-    localStorage.getItem("user") != "undefined"
+    (await localStorage.getItem("user")) != "undefined"
       ? JSON.parse(localStorage.getItem("user"))
       : null;
   if (user === "undefined" || !user)
