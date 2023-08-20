@@ -12,11 +12,11 @@ import { useEffect } from "react";
 // import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getFromLocalStorage());
-  });
+  // useEffect(() => {
+  //   dispatch(getFromLocalStorage());
+  // });
 
   return (
     <HashRouter basename="/">
