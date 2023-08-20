@@ -52,8 +52,8 @@ html[data-theme="dark"] {
 }
 
 html[data-theme="light"] {
-  --header: rgba(255, 255, 255, 0.779);
-  --bg: aliceblue;
+  --header: white;
+  --bg: rgb(150, 150, 150);
   --text: black;
   --primary: red;
 }
