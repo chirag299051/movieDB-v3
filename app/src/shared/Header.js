@@ -25,6 +25,10 @@ const Header = () => {
   const [cookies, removeCookie] = useCookies([]);
 
   useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  });
+
+  useEffect(() => {
     const verifyCookie = async () => {
       if (!cookies.token) {
         dispatch(setModal("login"));
@@ -37,7 +41,7 @@ const Header = () => {
       const { status, user } = data;
       console.log("_user :", _user);
       console.log("DATA: ", data);
-      return status && (removeCookie("token"), dispatch(setUser(user)));
+      return status ? null : (removeCookie("token"), dispatch(setUser(user)));
     };
     verifyCookie();
   }, [cookies, removeCookie, dispatch]);
