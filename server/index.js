@@ -32,7 +32,7 @@ app.get("*", (req, res) => res.sendFile(buildPath, "index.html"));
 
 app.use(
   cors({
-    origin: ["http://moviedb-v3.onrender.com", "http://localhost:3000"],
+    origin: ["https://moviedb-v3.onrender.com", "http://localhost:3000"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
