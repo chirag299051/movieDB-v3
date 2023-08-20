@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getFromLocalStorage());
-  }, []);
+  });
 
   return (
     <HashRouter basename="/">
