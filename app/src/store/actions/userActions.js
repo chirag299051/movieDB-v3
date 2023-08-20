@@ -25,6 +25,7 @@ export const getFromLocalStorage = () => (dispatch) => {
     localStorage.getItem("user") != "undefined"
       ? JSON.parse(localStorage.getItem("user"))
       : null;
-  if (user === "undefined") dispatch({ type: "SET_MODAL", modal: "login" });
+  if (user === "undefined" || !user)
+    dispatch({ type: "SET_MODAL", modal: "login" });
   else dispatch({ type: "SET_USER", user });
 };
