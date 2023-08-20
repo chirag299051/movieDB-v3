@@ -94,6 +94,7 @@ html[data-theme="light"] {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
+  color: aliceblue;
 }
 
 .modal-content input {
@@ -102,6 +103,7 @@ html[data-theme="light"] {
   border-bottom: 1px solid gray;
   font-size: 1.1rem;
   outline: none;
+  background-color: aliceblue;
 }
 
 .modal-content input::placeholder {
