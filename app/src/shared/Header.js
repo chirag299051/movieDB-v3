@@ -73,7 +73,9 @@ const Header = () => {
   return (
     <Navbar expand="lg" variant="dark">
       <Navbar.Brand as={Link} to="/" className="ms-5">
-        <span>movieDB v3</span>
+        <span>
+          movieDB <span className="v3">v3</span>
+        </span>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse

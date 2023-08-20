@@ -159,7 +159,14 @@ span button {
 
 .navbar-brand span {
   color: var(--primary);
+  font-size: 28px;
   font-weight: 600;
+}
+
+span.v3 {
+  color: red;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .navbar-dark .navbar-nav .nav-link.blue {
