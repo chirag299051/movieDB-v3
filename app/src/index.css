@@ -171,7 +171,7 @@ span.v3 {
   color: var(--primary) !important;
 }
 #nav-dropdown {
-  color: var(--primary);
+  color: var(--primary) !important;
 }
 
 .navbar-dark .navbar-nav .nav-link {
