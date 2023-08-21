@@ -168,7 +168,7 @@ span.v3 {
 }
 
 .navbar-dark .navbar-nav .nav-link.blue {
-  color: var(--primary);
+  color: var(--primary) !important;
 }
 #nav-dropdown {
   color: var(--primary);
