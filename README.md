@@ -1,22 +1,26 @@
-# Realtime chat application
+# Movie Database Application
 
-This repository contains a Movie Database application built using MERN stack. Please follow the instructions to set it up.
+This repository contains a Movie Database application built using MERN stack.
 
 **Features**
 
-1.  Login/Register
-2.  Dashboard
-3.  View top rated movies
-4.  Realtime chat with Friends
-5.  Creat Rooms for Chatting
-6.  Video conferencing
-7.  Logout
+1.  Login / Register when app first loads.
 
-[Demo](https://dark-client.onrender.com/)
+2.  Dashboard - View latest released Movies, Top Rated Movies and Popular TV Shows
+3.  Visit Profile page by clicking Profile from dropdown when clicking the username in header (once logged in).
+4.  View Movies and TV Shows of different genres when clicking Movies / TV Shows in header.
+5.  View Movie/TvShows in detail when clicking an item.
+6.  Search for different Movies/TvShows by entering the same in Search field in header.
+7.  Logout by clicking on Logout button from dropdown when clicking the username in header.
+
+[Demo](https://moviedb-v3.onrender.com/)
+
+Please follow the instructions to set it up.
 
 ### Instructions
 
-1.  Clone the repo and run `npm install` for both app and server folders.
+1.  Clone the repo and run `npm install` for both app and server folders to install dependencies.
+
 2.  From the app and server folders run `npm start`.
 
 ---
