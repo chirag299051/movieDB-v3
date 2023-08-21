@@ -71,7 +71,7 @@ const Header = () => {
   };
 
   return (
-    <Navbar expand="lg" variant="dark">
+    <Navbar collapseOnSelect expand="lg" variant="dark">
       <Navbar.Brand as={Link} to="/" className="ms-5">
         <span>
           movieDB <span className="v3">v3</span>
@@ -91,6 +91,7 @@ const Header = () => {
         >
           <div className="navLinks">
             <Nav.Link
+              eventKey="1"
               as={Link}
               to="/"
               className={page === "home" ? "navLink select" : "navlink"}
@@ -99,6 +100,7 @@ const Header = () => {
               HOME
             </Nav.Link>
             <Nav.Link
+              eventKey="2"
               as={Link}
               to="/genres/movie"
               className={page === "movie" ? "navLink select" : "navlink"}
@@ -107,6 +109,7 @@ const Header = () => {
               MOVIES
             </Nav.Link>
             <Nav.Link
+              eventKey="3"
               as={Link}
               to="/genres/tv"
               className={page === "tv" ? "navLink select" : "navlink"}
@@ -117,12 +120,13 @@ const Header = () => {
           </div>
           <Search />
           &emsp;&emsp;&emsp;&emsp;
-          <Nav.Link className="navLinks" onClick={toggleTheme}>
+          <Nav.Link eventKey="4" className="navLinks" onClick={toggleTheme}>
             THEME {theme === "light" ? <FiSun /> : <FiMoon />}
           </Nav.Link>
           &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
           {!_user ? (
             <Nav.Link
+              eventKey="5"
               as={Link}
               to="/"
               onClick={() => dispatch(setModal("login"))}
@@ -138,13 +142,16 @@ const Header = () => {
               menuVariant="dark"
             >
               <NavDropdown.Item
+                eventKey="6"
                 as={Link}
                 to={"/profile/" + _user._id}
                 className="blue"
               >
                 Profile
               </NavDropdown.Item>
-              <NavDropdown.Item onClick={logout}>Logout</NavDropdown.Item>
+              <NavDropdown.Item eventKey="7" onClick={logout}>
+                Logout
+              </NavDropdown.Item>
             </NavDropdown>
           )}
         </Nav>

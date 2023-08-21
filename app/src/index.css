@@ -53,7 +53,7 @@ html[data-theme="dark"] {
 
 html[data-theme="light"] {
   --header: white;
-  --bg: rgb(150, 150, 150);
+  --bg: #b0c4de;
   --text: black;
   --primary: red;
 }
@@ -433,6 +433,7 @@ h1.content-title {
 .accordion-item {
   background-color: #1b1e22 !important;
   border-radius: 20px !important;
+  color: #b0c4de !important;
 }
 .accordion-button {
   background-color: #1b1e22 !important;
@@ -668,6 +669,18 @@ h1.content-title {
 }
 
 @media screen and (max-width: 680px) {
+  .modal.show .modal-dialog {
+    width: 100vw;
+  }
+
+  .modal-dialog {
+    margin: 0px !important;
+  }
+
+  .modal .modal-content {
+    padding: 2rem 1rem;
+  }
+
   .react-select-container {
     width: 80%;
     margin: 20px auto;
@@ -726,5 +739,9 @@ h1.content-title {
     display: block;
     margin: 0px auto 15px auto;
     width: 40px;
+  }
+
+  .subscribe .card-container {
+    flex-direction: column;
   }
 }
