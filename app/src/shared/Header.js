@@ -129,7 +129,7 @@ const Header = () => {
               as={Link}
               to="/"
               onClick={() => dispatch(setModal("login"))}
-              className="blue"
+              className="blue navLink"
             >
               SIGN IN
             </Nav.Link>
