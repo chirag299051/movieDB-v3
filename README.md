@@ -11,7 +11,9 @@ This repository contains a Movie Database application built using MERN stack.
 4.  View Movies and TV Shows of different genres when clicking Movies / TV Shows in header.
 5.  View Movie/TvShows in detail when clicking an item.
 6.  Search for different Movies/TvShows by entering the same in Search field in header.
-7.  Logout by clicking on Logout button from dropdown when clicking the username in header.
+7.  Add Movie / TV Show to Watchlist when logged in, and view watchlist by going to Prodile page.
+8.  Watchlist item can be deleted by clicking on delete icon.
+9.  Logout by clicking on Logout button from dropdown when clicking the username in header.
 
 [Demo](https://moviedb-v3.onrender.com/)
 
