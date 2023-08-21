@@ -201,8 +201,9 @@ span.v3 {
 }
 
 .navLink {
-  margin-left: 20px !important;
-  margin-right: 20px !important;
+  min-width: max-content !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
 .navLink.select {
   background-color: var(--primary);
@@ -649,6 +650,17 @@ h1.content-title {
   position: absolute;
   right: 30px;
   height: 30px;
+}
+
+@media only screen and (min-width: 1240) and (max-width: 1640px) {
+  .react-select-container {
+    width: 40% !important;
+    margin-left: 80px !important;
+    margin-right: 50px !important;
+  }
+  .navbar-expand-lg .navbar-nav .nav-link {
+    min-width: max-content;
+  }
 }
 
 @media screen and (max-width: 680px) {

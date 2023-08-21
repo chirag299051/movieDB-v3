@@ -93,7 +93,7 @@ const Header = () => {
               eventKey="1"
               as={Link}
               to="/"
-              className={page === "home" ? "navLink select" : "navlink"}
+              className={page === "home" ? "navLink select" : "navLink"}
               onClick={() => dispatch(setPage("home"))}
             >
               HOME
@@ -102,7 +102,7 @@ const Header = () => {
               eventKey="2"
               as={Link}
               to="/genres/movie"
-              className={page === "movie" ? "navLink select" : "navlink"}
+              className={page === "movie" ? "navLink select" : "navLink"}
               onClick={() => dispatch(setPage("movie"))}
             >
               MOVIES
@@ -111,7 +111,7 @@ const Header = () => {
               eventKey="3"
               as={Link}
               to="/genres/tv"
-              className={page === "tv" ? "navLink select" : "navlink"}
+              className={page === "tv" ? "navLink select" : "navLink"}
               onClick={() => dispatch(setPage("tv"))}
             >
               TV SHOWS
@@ -119,7 +119,7 @@ const Header = () => {
           </div>
           <Search />
           &emsp;&emsp;&emsp;&emsp;
-          <Nav.Link eventKey="4" className="navLinks" onClick={toggleTheme}>
+          <Nav.Link eventKey="4" className="navLink" onClick={toggleTheme}>
             THEME {theme === "light" ? <FiSun /> : <FiMoon />}
           </Nav.Link>
           &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
