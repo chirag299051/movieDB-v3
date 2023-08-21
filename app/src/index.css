@@ -11,9 +11,8 @@ code {
     monospace;
 }
 ::-webkit-scrollbar {
-  width: 5px; /* width of vertical scrollbar */
+  width: 5px;
   height: 1px;
-  /* border: 1px solid #d5d5d5; */
 }
 ::-webkit-scrollbar-thumb {
   background: #a6c2dd;
@@ -53,7 +52,7 @@ html[data-theme="dark"] {
 
 html[data-theme="light"] {
   --header: white;
-  --bg: #b0c4de;
+  --bg: rgb(255, 237, 236);
   --text: black;
   --primary: red;
 }
@@ -151,7 +150,6 @@ span button {
 
 .container {
   max-width: 100vh !important;
-  /* margin: 0 !important; */
 }
 .navbar-brand {
   display: inline;
@@ -177,10 +175,7 @@ span.v3 {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-  color: var(--text);
-}
-.navbar-dark .navbar-nav .nav-link:hover {
-  /* color: aliceblue !important; */
+  color: var(--text) !important;
 }
 
 #basic-navbar-nav {
@@ -188,12 +183,10 @@ span.v3 {
   justify-content: space-between;
 }
 
-.navbar-collapse {
-  /* flex-basis: 1 !important; */
-}
 .navbar-toggler span.navbar-toggler-icon {
   background-image: url("./assets/menu.svg") !important;
 }
+
 .navbar-toggler:focus,
 .navbar-toggler:active,
 .navbar-toggler-icon:focus {
@@ -252,7 +245,6 @@ span.v3 {
   opacity: 0.8;
 }
 .react-select__option:hover {
-  /* background-color: black; */
   opacity: 1;
 }
 .react-select__option--is-focused {
@@ -263,7 +255,6 @@ span.v3 {
   overflow-x: auto;
   max-width: 80%;
   display: inline;
-  /* margin-right: 0px; */
 }
 
 .subscribe-heading {
@@ -381,7 +372,6 @@ h1.content-title {
   padding-top: 5px;
 }
 .backdrop h4 {
-  /* font-size: 40px; */
   margin: 0px;
   display: inline-block;
 }
@@ -462,7 +452,6 @@ h1.content-title {
 .reviews {
   color: #707d8a;
   width: 80%;
-  /* min-height: 400px; */
   margin: 100vh auto 150px auto;
   border-radius: 20px;
 }
@@ -485,10 +474,8 @@ h1.content-title {
   padding: 10px;
   border-top: 12px solid black;
   border-bottom: 12px solid black;
-  /* border-bottom: 1px solid #707d8a; */
 }
 .review img {
-  /* display: inline-block; */
   border-radius: 50%;
   margin: 0px 10px 5px 10px;
   width: 50px;
@@ -507,7 +494,6 @@ h1.content-title {
 
 .player-wrapper {
   position: relative;
-  /* padding-top: 56.25%; Player ratio: 100 / (1280 / 720) */
 }
 .react-player {
   position: absolute;
@@ -538,11 +524,9 @@ h1.content-title {
 
 .head {
   padding: 0px 50px;
-  /* color: #212529; */
   color: #46576b;
 }
 .list {
-  /* background-color: black; */
   min-height: 307px;
   margin-bottom: 60px;
   overflow-y: hidden;
@@ -597,7 +581,6 @@ h1.content-title {
 .list-item img {
   height: 200px;
   border-radius: 5px;
-  /* z-index: 1; */
 }
 .item-detail .heart {
   color: gray !important;
@@ -639,7 +622,7 @@ h1.content-title {
   padding-top: 30px;
   padding-bottom: 30px;
   text-align: center;
-  color: rgb(78, 84, 90);
+  color: rgb(148, 155, 162);
   font-size: 14px;
   font-weight: 500;
   background-color: var(--header);
@@ -647,19 +630,19 @@ h1.content-title {
 
 .footer a {
   color: inherit;
-  text-decoration: none; /* no underline */
+  text-decoration: none;
 }
 .footer a:hover {
   color: inherit;
 }
 
 .footer a span#c {
-  color: rgb(115, 124, 133);
+  color: deepskyblue;
   transition: all 0.2s ease-in-out;
 }
 
 .footer a:hover span#c {
-  color: darkred;
+  color: red;
 }
 
 .footer img {
@@ -681,14 +664,21 @@ h1.content-title {
     padding: 2rem 1rem;
   }
 
+  .me-5.navbar-nav {
+    align-items: center;
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    margin-left: 0px;
+  }
+  .navLinks {
+    margin-left: 0px;
+  }
+
   .react-select-container {
     width: 80%;
     margin: 20px auto;
   }
-  /* .react-player {
-    margin-top: 50px;
-    max-height: 230px;
-  } */
+
   .arrow-wrapper {
     left: 41%;
   }
@@ -717,8 +707,6 @@ h1.content-title {
     position: unset;
   }
   .backdrop .overview {
-    /* position: unset;
-    margin-top: 130px; */
     height: 110px;
     bottom: -150px;
   }

@@ -26,17 +26,10 @@ const Content = () => {
   const [stream, setStream] = useState([]);
   const [omdb, setOmdb] = useState({});
   const [ytKeys, setYtKeys] = useState();
-  const [favorite, setFavorite] = useState(false);
 
   const dispatch = useDispatch();
 
-  const { watchlist, user } = useSelector((state) => {
-    return state.user;
-  });
-
-  useEffect(() => {
-    setFavorite(watchlist && watchlist.some((x) => x.id === id));
-  }, [watchlist]);
+  const user = useSelector((state) => state.user.user);
 
   const { type, id } = useParams();
 
@@ -84,12 +77,8 @@ const Content = () => {
         .filter((x) => x.type === "Trailer")
         .reverse()
         .map((x) => "https://www.youtube.com/watch?v=" + x.key);
-    console.log("YT", keys);
     setYtKeys(keys);
-    console.log(backdropURL);
   }, [content, type, id]);
-
-  console.log(type, id, content);
 
   useEffect(() => {
     next();
@@ -104,7 +93,7 @@ const Content = () => {
   const addToList = (e, item) => {
     e.stopPropagation();
     e.preventDefault();
-    dispatch(addToWatchlist(user.id, item));
+    user && dispatch(addToWatchlist(user.id, item));
   };
 
   return (
@@ -154,7 +143,7 @@ const Content = () => {
             </h4>
             <h4>&nbsp; {omdb && omdb.Runtime}</h4>&nbsp;
             <FaHeart
-              className={favorite ? "heart fav" : "heart"}
+              className={"heart"}
               onClick={(e) => addToList(e, content)}
               size={30}
             />

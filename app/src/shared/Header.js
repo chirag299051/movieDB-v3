@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Search from "../shared/Search";
-import { Navbar, Nav, Button } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -39,8 +39,7 @@ const Header = () => {
         { withCredentials: true }
       );
       const { status, user } = data;
-      console.log("_user :", _user);
-      console.log("DATA: ", data);
+
       return status ? null : (removeCookie("token"), dispatch(setUser(user)));
     };
     verifyCookie();

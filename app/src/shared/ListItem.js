@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToWatchlist } from "../store/actions/userActions";
 
 const ListItem = ({ item, fav, del }) => {
-  const [favorite, setFavorite] = useState();
   const [typ, setTyp] = useState();
 
   const dispatch = useDispatch();
@@ -23,7 +22,6 @@ const ListItem = ({ item, fav, del }) => {
     vote_average,
     name,
     first_air_date,
-    type,
   } = item;
 
   const addToList = (e, item) => {
@@ -36,24 +34,16 @@ const ListItem = ({ item, fav, del }) => {
     e.stopPropagation();
     e.preventDefault();
     del(id, userId, title || name);
-    console.log(userId);
   };
 
   useEffect(() => {
     setTyp(title ? "movie" : "tv");
-  }, []);
-
-  // useEffect(() => {
-  //   setFavorite(favorites.some((x) => x.id === id));
-  // }, []);
+  }, [title]);
 
   return (
     poster_path && (
       <Link to={`/${typ}/${id}`} className="list-item">
-        <img
-          src={"https://image.tmdb.org/t/p/w200" + poster_path}
-          alt="No Image"
-        />
+        <img src={"https://image.tmdb.org/t/p/w200" + poster_path} />
         <div className="item-detail">
           {fav && (
             <div className="delete-wrapper">
@@ -71,7 +61,7 @@ const ListItem = ({ item, fav, del }) => {
             </div>
           )}
           <FaHeart
-            className={favorite ? "heart fav" : "heart"}
+            className="heart"
             onClick={(e) => addToList(e, item)}
             color="red"
             size="20"
@@ -79,7 +69,7 @@ const ListItem = ({ item, fav, del }) => {
               position: "absolute",
               marginTop: "-40px",
               marginLeft: "105px",
-              color: favorite ? "red" : "grey",
+              color: "red",
             }}
           />
           <h6>

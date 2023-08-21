@@ -10,7 +10,6 @@ export const fetch = (inTheatres, topRated, popular) => (dispatch) => {
 };
 
 export const setTheme = (theme) => (dispatch) => {
-  console.log("theme ", theme);
   dispatch({ type: "SET_THEME", theme });
 };
 

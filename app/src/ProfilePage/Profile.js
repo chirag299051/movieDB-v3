@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import List from "../shared/List";
 import { useSelector } from "react-redux";
 import SubscribeCard from "../shared/SubscribeCard";
@@ -29,6 +29,10 @@ const data = [
 
 const Profile = () => {
   const watchlist = useSelector((state) => state.user.user?.watchlist);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <section className="profile">

@@ -12,7 +12,6 @@ const Search = () => {
   const search = async (val) => {
     const resp = await fetch(searchURL + val);
     const result = await resp.json();
-    console.log(result);
 
     return result.results
       .map((x) => {
@@ -41,7 +40,6 @@ const Search = () => {
   const handleSelect = ({ title, id, type }) => {
     setValue(title);
     history.push(`/${type}/${id}`);
-    console.log(title, id, type);
   };
   return (
     <AsyncSelect

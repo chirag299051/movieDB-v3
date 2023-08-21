@@ -22,7 +22,6 @@ const Genres = () => {
           genres.map(async (x) => {
             const res = await fetch(MOVIE_URL + x.id);
             const result = await res.json();
-            console.log(result);
             return { results: result.results, genre: x.name };
           })
         );
@@ -32,7 +31,6 @@ const Genres = () => {
           genres.map(async (x) => {
             const res = await fetch(TV_URL + x.id);
             const result = await res.json();
-            console.log(result);
             return { results: result.results, genre: x.name };
           })
         );
@@ -41,11 +39,6 @@ const Genres = () => {
     };
     fetchGenres();
   }, [type]);
-
-  useEffect(() => {
-    console.log("Movie Data: ", mData);
-    console.log("TV Data: ", tvData);
-  });
 
   return (
     <section className="genres">

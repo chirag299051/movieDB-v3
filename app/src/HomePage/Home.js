@@ -31,7 +31,6 @@ const Home = () => {
 
   const dispatch = useDispatch();
   const { modal } = useSelector((state) => state.user);
-  console.log("modal ", modal);
 
   useEffect(() => {
     dispatch(fetch(inTheatres, topRated, popular));

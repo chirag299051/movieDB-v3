@@ -73,7 +73,9 @@ const Login = (props) => {
 
   return (
     <Modal
-      {...props}
+      show={props.show}
+      onHide={props.onHide}
+      login={props.login}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered

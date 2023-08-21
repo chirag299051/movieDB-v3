@@ -18,7 +18,6 @@ const appReducer = (state = initState, action) => {
     return { ...state, theme: action.theme };
   }
   if (action.type === "SET_PAGE") {
-    // console.log("page : ", action.page);
     return { ...state, page: action.page };
   }
   return state;
