@@ -22,39 +22,24 @@ const Header = () => {
 
   const history = useHistory();
 
-  const [cookies, removeCookie] = useCookies([]);
-
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   });
 
   useEffect(() => {
-    const verifyCookie = async () => {
-      if (!cookies.token) {
-        dispatch(setModal("login"));
-      }
-      const { data } = await axios.post(
-        `${serverUrl}`,
-        {},
-        { withCredentials: true }
-      );
-      const { status, user } = data;
-
-      return status ? null : (removeCookie("token"), dispatch(setUser(user)));
-    };
-    verifyCookie();
-  }, [cookies, removeCookie, dispatch]);
-
-  useEffect(() => {
-    if (cookies.token) {
-      dispatch(setModal(false));
+    const user = localStorage.getItem("user");
+    if (!user) {
+      logout();
+      dispatch(setModal("login"));
+    } else {
+      dispatch(setUser(JSON.parse(user)));
+      dispatch(setModal(null));
     }
-  }, [cookies, dispatch]);
+  }, []);
 
   const logout = async () => {
+    localStorage.clear();
     await axios.post(`${serverUrl}/logout`);
-
-    removeCookie("token");
     history.push("/");
     dispatch(setUser(null));
     dispatch(setModal("login"));

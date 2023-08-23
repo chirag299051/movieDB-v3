@@ -51,6 +51,9 @@ const Login = (props) => {
       );
       const { success, message, user } = data;
       dispatch(setUser(user));
+      localStorage.setItem("user", JSON.stringify(user));
+      dispatch(setModal(null));
+
       if (success) {
         handleSuccess(message);
         setTimeout(() => {

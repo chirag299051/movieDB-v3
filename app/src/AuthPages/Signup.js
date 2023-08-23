@@ -54,9 +54,13 @@ const Signup = (props) => {
         { withCredentials: true }
       );
       const { success, message, user } = data;
-      if (success) {
+      console.log(user);
+      if (user) {
         handleSuccess(message);
         dispatch(setUser(user));
+        localStorage.setItem("user", JSON.stringify(user));
+        dispatch(setModal(null));
+
         setTimeout(() => {
           history.push("/");
         }, 1000);

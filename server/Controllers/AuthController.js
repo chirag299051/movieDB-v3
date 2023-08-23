@@ -17,9 +17,15 @@ module.exports.Signup = async (req, res, next) => {
       watchlist: [],
     });
     const token = createSecretToken(user._id);
-    res.cookie("token", token, {
-      withCredentials: true,
-      httpOnly: false,
+    res.status(200).json({
+      user: {
+        email: user.email,
+        token: token,
+        username: user.username,
+        watchlist: user.watchlist,
+        createdAt: user.createdAt,
+        _id: user._id,
+      },
     });
     res
       .status(201)
@@ -45,9 +51,15 @@ module.exports.Login = async (req, res, next) => {
       return res.json({ message: "Incorrect password or email" });
     }
     const token = createSecretToken(user._id);
-    res.cookie("token", token, {
-      withCredentials: true,
-      httpOnly: false,
+    res.status(200).json({
+      user: {
+        email: user.email,
+        token: token,
+        username: user.username,
+        watchlist: user.watchlist,
+        createdAt: user.createdAt,
+        _id: user._id,
+      },
     });
     res
       .status(201)
@@ -59,11 +71,6 @@ module.exports.Login = async (req, res, next) => {
 };
 
 module.exports.logout = async (req, res) => {
-  // Set token to none and expire after 5 seconds
-  res.cookie("token", "none", {
-    expires: new Date(Date.now() + 5 * 1000),
-    httpOnly: true,
-  });
   res
     .status(200)
     .json({ success: true, message: "User logged out successfully" });
