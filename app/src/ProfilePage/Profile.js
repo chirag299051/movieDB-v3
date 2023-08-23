@@ -29,10 +29,15 @@ const data = [
 
 const Profile = () => {
   const watchlist = useSelector((state) => state.user.user?.watchlist);
+  const user = useSelector((state) => state.user.user);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("user", JSON.stringify(user));
+  }, [watchlist]);
 
   return (
     <section className="profile">
