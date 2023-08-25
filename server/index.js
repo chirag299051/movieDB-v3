@@ -2,7 +2,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
-const cookieParser = require("cookie-parser");
 const authRoute = require("./Routes/AuthRoutes");
 const userRoute = require("./Routes/UserRoutes");
 require("dotenv").config();
@@ -28,7 +27,7 @@ const buildPath = path.join(__dirname, "../app/build");
 
 app.use(express.static(buildPath));
 
-app.get("*", (req, res) => res.sendFile(buildPath, "index.html"));
+// app.get("*", (req, res) => res.sendFile(buildPath, "index.html"));
 
 app.use(
   cors({
@@ -38,8 +37,6 @@ app.use(
   })
 );
 app.use(bodyParser.urlencoded({ extended: true }));
-
-app.use(cookieParser());
 app.use(express.json());
 
 app.use("/", authRoute);
