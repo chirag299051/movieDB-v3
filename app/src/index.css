@@ -51,10 +51,10 @@ html[data-theme="dark"] {
 }
 
 html[data-theme="light"] {
-  --header: white;
-  --bg: rgb(255, 237, 236);
+  --header: rgb(126, 144, 160);
+  --bg: rgb(224, 242, 255);
   --text: black;
-  --primary: red;
+  --primary: deepskyblue;
 }
 
 .modal-header {
@@ -68,15 +68,15 @@ html[data-theme="light"] {
 }
 
 .modal .modal-content {
-  background-color: rgb(23 23 23);
+  background-color: rgb(0 0 0);
+  opacity: 0.85;
   margin: auto;
-  color: white;
+  color: #fff;
   padding: 2rem 3rem;
+  border: 1px solid #304659;
   border-radius: 0.5rem;
   width: 100%;
   max-width: 500px;
-
-  box-shadow: 10px 10px 8px -6px rgba(255, 255, 255, 0.3);
 }
 
 .modal-footer {
