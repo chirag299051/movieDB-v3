@@ -49,13 +49,9 @@ const Signup = (props) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const { data } = await axios.post(
-        `${serverUrl}/signup`,
-        {
-          ...inputValue,
-        },
-        { withCredentials: true }
-      );
+      const { data } = await axios.post(`${serverUrl}/signup`, {
+        ...inputValue,
+      });
       const { success, message, user } = data;
       console.log(user);
       if (user) {

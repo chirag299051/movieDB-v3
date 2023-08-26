@@ -45,13 +45,9 @@ const Login = (props) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const { data } = await axios.post(
-        `${serverUrl}/login`,
-        {
-          ...inputValue,
-        },
-        { withCredentials: true }
-      );
+      const { data } = await axios.post(`${serverUrl}/login`, {
+        ...inputValue,
+      });
       const { success, message, user } = data;
       dispatch(setUser(user));
       localStorage.setItem("user", JSON.stringify(user));
