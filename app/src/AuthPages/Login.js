@@ -42,8 +42,8 @@ const Login = (props) => {
   };
 
   const handleSubmit = async (e) => {
-    setLoading(true);
     e.preventDefault();
+    setLoading(true);
     try {
       const { data } = await axios.post(
         `${serverUrl}/login`,
