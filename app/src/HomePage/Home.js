@@ -11,8 +11,8 @@ const KEY = "092e8cb2fdfe2fa5f210c9f2a932d024";
 const inThURL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${KEY}&language=en-US&page=1`;
 const topURL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${KEY}&language=en-US&page=1`;
 const topURL2 = `https://api.themoviedb.org/3/movie/top_rated?api_key=${KEY}&language=en-US&page=2`;
-const popURL = `https://api.themoviedb.org/3/tv/popular?api_key=${KEY}&language=en-US&page=1`;
-const popURL2 = `https://api.themoviedb.org/3/tv/popular?api_key=${KEY}&language=en-US&page=2`;
+const popURL = `https://api.themoviedb.org/3/tv/top_rated?api_key=${KEY}&language=en-US&page=1'`;
+const popURL2 = `https://api.themoviedb.org/3/tv/popular?api_key=${KEY}&language=en-US&page=1'`;
 
 const Home = () => {
   const { data: inTheatres } = useFetch(inThURL);

@@ -12,7 +12,7 @@ import { useFetch } from "../shared/useFetch";
 import { addToWatchlist } from "../store/actions/userActions";
 import { useDispatch, useSelector } from "react-redux";
 
-const KEY = "092e8cb2fdfe2fa5f210c9f2a932d024";
+const KEY = "ca008f496d43542c3bf16d99ae818952";
 const contentURL = "https://api.themoviedb.org/3/";
 const omdbURL = `https://www.omdbapi.com/?apikey=b9e96893&t=`;
 const STREAM_URL = `https://api.themoviedb.org/3/`;
@@ -62,13 +62,15 @@ const Content = () => {
           `${STREAM_URL}${type}/${id}/watch/providers?api_key=${KEY}`
         );
         const result4 = await res4.json();
-        setStream(result4.results.IN.flatrate);
+        setStream(result4.results.IN?.flatrate);
       } catch (e) {
         console.log("Err", e);
       }
     };
     fetchData();
   }, [content.name, content.title, type, id]);
+
+  console.log(omdb);
 
   useEffect(() => {
     const keys =
@@ -134,7 +136,9 @@ const Content = () => {
                   />
                 ))}
             </div>
-            <p className="awards">{omdb && omdb.Awards}</p>
+            <p className="awards">
+              {omdb.Title !== "Undefined" && omdb.Awards}
+            </p>
             &nbsp; &nbsp; &nbsp; &nbsp;
             <h4>{content.release_date && content.release_date.substr(0, 4)}</h4>
             <h4>
@@ -169,14 +173,17 @@ const Content = () => {
                 ))}
             </div>
             <div className="actors">
-              {omdb.Actors &&
-                omdb.Actors.split(", ").map((x, index) => (
+              {omdb.Title !== "Undefined" &&
+                omdb.Actors?.split(", ").map((x, index) => (
                   <p key={index}>
                     <i>{x}</i>
                   </p>
                 ))}
               <p>
-                <i>- {omdb && (omdb.Director || omdb.Writer)} </i>
+                <i>
+                  -{" "}
+                  {omdb.Title !== "Undefined" && (omdb.Director || omdb.Writer)}{" "}
+                </i>
               </p>
             </div>
             <div className="overview">

@@ -32,7 +32,8 @@ code {
 }
 
 #root {
-  background-color: var(--bg);
+  /* background-color: var(--bg); */
+  background-image: linear-gradient(147deg, var(--gradient) 0%, var(--bg) 74%);
 }
 
 html.color-theme-in-transition,
@@ -44,14 +45,17 @@ html.color-theme-in-transition *:after {
 }
 
 html[data-theme="dark"] {
+  --gradient: black;
   --header: black;
-  --bg: rgb(15, 15, 15);
+  --bg: #2c3e50;
   --text: aliceblue;
   --primary: deepskyblue;
 }
 
 html[data-theme="light"] {
-  --header: rgb(126, 144, 160);
+  --gradient: black;
+  /* --header: rgb(126, 144, 160); */
+  --header: white;
   --bg: rgb(224, 242, 255);
   --text: black;
   --primary: deepskyblue;
@@ -59,7 +63,7 @@ html[data-theme="light"] {
 
 .loading {
   width: 36px;
-  margin: auto;
+  margin: 15px auto;
   aspect-ratio: 2;
   --_g: no-repeat radial-gradient(circle closest-side, #ff0000 90%, #ffffff00);
   background: var(--_g) 0% 50%, var(--_g) 50% 50%, var(--_g) 100% 50%;
