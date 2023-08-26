@@ -27,8 +27,6 @@ const buildPath = path.join(__dirname, "../app/build");
 
 app.use(express.static(buildPath));
 
-// app.get("*", (req, res) => res.sendFile(buildPath, "index.html"));
-
 app.use(
   cors({
     origin: ["https://moviedb-v3.onrender.com", "http://localhost:3000"],

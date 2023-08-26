@@ -6,12 +6,14 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { useDispatch } from "react-redux";
 import { setModal, setUser } from "../store/actions/userActions";
+import Loading from "../shared/Loading";
 
 const serverUrl = process.env.REACT_APP_SERVER_URL;
 
 const Login = (props) => {
   const history = useHistory();
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
 
   const [inputValue, setInputValue] = useState({
     email: "",
@@ -40,6 +42,7 @@ const Login = (props) => {
   };
 
   const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
     try {
       const { data } = await axios.post(
@@ -53,6 +56,7 @@ const Login = (props) => {
       dispatch(setUser(user));
       localStorage.setItem("user", JSON.stringify(user));
       dispatch(setModal(null));
+      setLoading(false);
 
       if (success) {
         handleSuccess(message);
@@ -112,9 +116,14 @@ const Login = (props) => {
             />
           </div>
           <button type="submit">Submit</button>
-          <span>
-            Dont have an account? <Button onClick={props.signup}>Signup</Button>
-          </span>
+          {loading ? (
+            <Loading />
+          ) : (
+            <span>
+              Dont have an account?{" "}
+              <Button onClick={props.signup}>Signup</Button>
+            </span>
+          )}
         </form>
       </Modal.Body>
     </Modal>
