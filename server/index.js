@@ -19,23 +19,28 @@ mongoose
   .then(() => console.log("MongoDB is connected successfully"))
   .catch((err) => console.error(err));
 
-app.listen(API_PORT, () => {
-  console.log(`Server is listening on port ${API_PORT}`);
-});
+app.use(cors());
+app.options("*", cors()); // this enables preflight
+app.use(express.json());
+app.use(express.urlencoded());
 
 const buildPath = path.join(__dirname, "../app/build");
 
 app.use(express.static(buildPath));
 
-app.use(
-  cors({
-    origin: ["https://moviedb-v3.onrender.com", "http://localhost:3000"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.json());
+// app.use(
+//   cors({
+//     origin: ["https://moviedb-v3.onrender.com", "http://localhost:3000"],
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     credentials: true,
+//   })
+// );
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(express.json());
 
 app.use("/", authRoute);
 app.use("/", userRoute);
+
+app.listen(API_PORT, () => {
+  console.log(`Server is listening on port ${API_PORT}`);
+});
