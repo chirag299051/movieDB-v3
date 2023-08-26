@@ -96,7 +96,7 @@ const Signup = (props) => {
         <Modal.Title id="contained-modal-title-vcenter">Signup</Modal.Title>
       </Modal.Header>
       <Modal.Body className="modal-body">
-        <form onSubmit={handleSubmit}>
+        <form>
           <div>
             <label htmlFor="email">Email</label>
             <input
@@ -127,7 +127,7 @@ const Signup = (props) => {
               onChange={handleOnChange}
             />
           </div>
-          <Button type="submit">Submit</Button>
+          <Button onClick={handleSubmit}>Submit</Button>
         </form>
       </Modal.Body>
       <Modal.Footer>

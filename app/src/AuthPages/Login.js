@@ -94,7 +94,7 @@ const Login = (props) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="modal-body">
-        <form onSubmit={handleSubmit}>
+        <form>
           <div>
             <label htmlFor="email">Email</label>
             <input
@@ -115,7 +115,7 @@ const Login = (props) => {
               onChange={handleOnChange}
             />
           </div>
-          <button type="submit">Submit</button>
+          <button onClick={handleSubmit}>Submit</button>
           {loading ? (
             <Loading />
           ) : (
