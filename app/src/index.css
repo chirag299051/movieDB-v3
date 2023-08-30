@@ -53,10 +53,10 @@ html[data-theme="dark"] {
 }
 
 html[data-theme="light"] {
-  --gradient: black;
+  --gradient: rgb(107, 152, 161);
   /* --header: rgb(126, 144, 160); */
   --header: white;
-  --bg: rgb(224, 242, 255);
+  --bg: aliceblue;
   --text: black;
   --primary: deepskyblue;
 }
