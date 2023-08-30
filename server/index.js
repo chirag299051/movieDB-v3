@@ -21,7 +21,7 @@ mongoose
 app.use(cors());
 app.options("*", cors());
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 
 const buildPath = path.join(__dirname, "../app/build");
 app.use(express.static(buildPath));
